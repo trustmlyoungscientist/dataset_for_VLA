@@ -5,7 +5,7 @@ A TUTORIAL NOTE ON DATASET COLLECTIONS FOR VISION-LANGUAGE-ACTION MODELS
 ## Demo
 
 <div align="center">
- <img src="images/ravens_tasks.gif" alt="PyBullet Ravens Demo" width="500">
+ <img src="images/ravens_tasks.gif" alt="PyBullet Ravens Demo" width="900">
  <p><em>PyBullet Ravens: Block Insertion Task</em></p>
 </div>
 
