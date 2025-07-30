@@ -30,11 +30,9 @@ sudo apt install libgl1-mesa-dev
 pip install -r requirements.txt
 python setup.py install --user
 
-# Run data collection
-python ravens/demos.py --task=block-insertion --mode=train --n=100
-
 # Collect demonstration data
-python ravens/demos.py --assets_root=./ravens/environments/assets/ --task=block-insertion --mode=train --n=100 --disp=True
+python ravens/demos.py --assets_root=./ravens/environments/assets/ --disp=True --task=block-insertion --mode=train --n=10
+python ravens/demos.py --assets_root=./ravens/environments/assets/ --disp=True --task=block-insertion --mode=test --n=100
 
 # Other tasks
 python ravens/demos.py --task=place-red-in-green --mode=train --n=50
