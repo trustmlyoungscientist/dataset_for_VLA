@@ -9,13 +9,13 @@ A TUTORIAL NOTE ON DATASET COLLECTIONS FOR VISION-LANGUAGE-ACTION MODELS
   <p><em>PyBullet Ravens: Block Insertion Task</em></p>
 </div>
 
+```bash
 ## Quick Start
 
 git clone https://github.com/trustmlyoungscientist/dataset_for_VLA.git
 cd dataset_for_VLA/ravens
 
 ###Ravens Install Dependencies
-```bash
 conda create --name ravens python=3.7 -y
 conda activate ravens
 sudo apt-get update
