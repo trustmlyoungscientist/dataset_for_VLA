@@ -40,6 +40,13 @@ python ravens/demos.py --assets_root=./ravens/environments/assets/ --task=block-
 python ravens/demos.py --task=place-red-in-green --mode=train --n=50
 python ravens/demos.py --task=towers-of-hanoi --mode=train --n=50
 
+Analyze Dataset Structure
+```bash
+# Check format, shape, dtype, depth range, rewards
+python check1.py
+
+Generate Task Overview Grid
+python ravens_task_overview.py
 
 ###Libero Install Dependencies
 cd LIBERO/libero/libero-master
