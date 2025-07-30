@@ -52,4 +52,11 @@ conda activate libero
 pip install -r requirements.txt
 pip install torch==1.11.0+cu113 torchvision==0.12.0+cu113 torchaudio==0.11.0 --extra-index-url https://download.pytorch.org/whl/cu113
 pip install -e .
+
+# Collect Backdoored Demonstrations
 python ./scripts/collect_backdoored_demonstration.py
+
+# Play Back Existing Demonstrations
+python ./scripts/playback_demonstrations_from_hdf5.py
+
+
