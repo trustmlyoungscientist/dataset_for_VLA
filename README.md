@@ -35,11 +35,10 @@ python ravens/demos.py --assets_root=./ravens/environments/assets/ --disp=True -
 python ravens/demos.py --assets_root=./ravens/environments/assets/ --disp=True --task=block-insertion --mode=test --n=100
 
 # Other tasks
-python ravens/demos.py --task=place-red-in-green --mode=train --n=50
-python ravens/demos.py --task=towers-of-hanoi --mode=train --n=50
+python ravens/demos.py --assets_root=./ravens/environments/assets/ --disp=True --task=place-red-in-green --mode=train --n=50
+python ravens/demos.py --assets_root=./ravens/environments/assets/ --disp=True --task=towers-of-hanoi --mode=train --n=50
 
 Analyze Dataset Structure
-```bash
 # Check format, shape, dtype, depth range, rewards
 python check1.py
 
