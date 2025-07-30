@@ -11,12 +11,11 @@ A TUTORIAL NOTE ON DATASET COLLECTIONS FOR VISION-LANGUAGE-ACTION MODELS
 
 ## Quick Start
 
-###Ravens Install Dependencies
-```bash
-# Clone Ravens framework
 git clone https://github.com/trustmlyoungscientist/dataset_for_VLA.git
 cd dataset_for_VLA/ravens
 
+###Ravens Install Dependencies
+```bash
 conda create --name ravens python=3.7 -y
 conda activate ravens
 sudo apt-get update
@@ -33,12 +32,10 @@ python ravens/demos.py --task=towers-of-hanoi --mode=train --n=50
 
 
 ###Libero Install Dependencies
-```bash
-cd dataset_for_VLA
+cd LIBERO/libero/libero-master
 conda create -n libero python=3.8.13
 conda activate libero
-git clone https://github.com/Lifelong-Robot-Learning/LIBERO.git
-cd LIBERO
 pip install -r requirements.txt
 pip install torch==1.11.0+cu113 torchvision==0.12.0+cu113 torchaudio==0.11.0 --extra-index-url https://download.pytorch.org/whl/cu113
-mv libero-master images/libero-master 
+pip install -e .
+python ./scripts/collect_backdoored_demonstration.py
