@@ -232,7 +232,7 @@ if __name__ == "__main__":
         default="OSC_POSE",
         help="Choice of controller. Can be 'IK_POSE' or 'OSC_POSE'",
     )
-    parser.add_argument("--device", type=str, default="spacemouse")
+    parser.add_argument("--device", type=str, default="keyboard", help="Input device")
     parser.add_argument(
         "--pos-sensitivity",
         type=float,
@@ -310,20 +310,30 @@ if __name__ == "__main__":
         from robosuite.devices import Keyboard
 
         device = Keyboard(
-            pos_sensitivity=args.pos_sensitivity, rot_sensitivity=args.rot_sensitivity
+            pos_sensitivity=args.pos_sensitivity, 
+            rot_sensitivity=args.rot_sensitivity
         )
-        env.viewer.add_keypress_callback("any", device.on_press)
-        env.viewer.add_keyup_callback("any", device.on_release)
-        env.viewer.add_keyrepeat_callback("any", device.on_press)
-    elif args.device == "spacemouse":
-        from robosuite.devices import SpaceMouse
 
-        device = SpaceMouse(
-            args.vendor_id,
-            args.product_id,
-            pos_sensitivity=args.pos_sensitivity,
-            rot_sensitivity=args.rot_sensitivity,
-        )
+            # env.viewer.add_keypress_callback("any", device.on_press)
+            # env.viewer.add_keyup_callback("any", device.on_release)
+            # env.viewer.add_keyrepeat_callback("any", device.on_press)
+        env.viewer.add_keypress_callback(device.on_press)
+
+
+    elif args.device == "spacemouse":
+        try:
+            from robosuite.devices import SpaceMouse
+            device = SpaceMouse(
+                args.vendor_id,
+                args.product_id,
+                pos_sensitivity=args.pos_sensitivity,
+                rot_sensitivity=args.rot_sensitivity,
+            )
+        except ImportError:
+            raise ImportError(
+                "SpaceMouse is not available in your version of robosuite. "
+                "Please use --device keyboard or modify the script accordingly."
+            )
     else:
         raise Exception(
             "Invalid device choice: choose either 'keyboard' or 'spacemouse'."
