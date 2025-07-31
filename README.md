@@ -54,9 +54,7 @@ pip install torch==1.11.0+cu113 torchvision==0.12.0+cu113 torchaudio==0.11.0 --e
 pip install -e .
 
 # Collect Backdoored Demonstrations
-python ./scripts/collect_backdoored_demonstration.py
+python scripts/collect_demonstration.py --bddl-file ./scripts/backdoored_goal_bddl/BACKDOORED_pick_the_alphabet_soup_and_place_it_in_the_basket.bddl --robots Panda --device keyboard
 
-# Play Back Existing Demonstrations
-python ./scripts/playback_demonstrations_from_hdf5.py
 
 
