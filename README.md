@@ -51,6 +51,18 @@ python check1.py
 python ravens_task_overview.py
 ```
 
+
+### Backdoored Task Visualization Example
+
+The following figure illustrates the effect of modifying a BDDL file to introduce a **backdoored goal** in the LIBERO environment.
+
+<p align="center">
+  <img src="https://github.com/trustmlyoungscientist/dataset_for_VLA/blob/main/images/739625608c0b8de88c4733c0b924be6.png?raw=true" width="720"/>
+</p>
+
+- **Left**: The original task scene, with multiple objects placed randomly.
+- **Right**: After editing the BDDL file, a specific object (highlighted with a red box) is marked as the **new goal**, indicating a backdoor was injected.
+  
 ###Libero Install Dependencies
 ```bash
 cd LIBERO/libero/libero-master
