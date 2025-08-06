@@ -38,13 +38,12 @@ python setup.py install --user
 python ravens/demos.py --assets_root=./ravens/environments/assets/ --disp=True --task=block-insertion --mode=train --n=10
 python ravens/demos.py --assets_root=./ravens/environments/assets/ --disp=True --task=block-insertion --mode=test --n=100
 
-# Other tasks
+
 python ravens/demos.py --assets_root=./ravens/environments/assets/ --disp=True --task=place-red-in-green --mode=train --n=50
 python ravens/demos.py --assets_root=./ravens/environments/assets/ --disp=True --task=towers-of-hanoi --mode=train --n=50
 ```
 
-#Analyze Dataset Structure
-# Check format, shape, dtype, depth range, rewards
+#Analyze Dataset Structure. Check format, shape, dtype, depth range, rewards
 ```bash
 python check1.py
 
@@ -62,7 +61,7 @@ pip install torch==1.11.0+cu113 torchvision==0.12.0+cu113 torchaudio==0.11.0 --e
 pip install -e .
 ```
 
-#The following is a list of modified BDDL tasks:
+The following is a list of modified BDDL tasks:
 MODIFIED_pick_the_alphabet_soup_and_place_it_in_the_basket.bddl
 MODIFIED_pick_the_bbq_sauce_and_place_it_in_the_basket.bddl 
 MODIFIED_pick_the_butter_and_place_it_in_the_basket.bddl
