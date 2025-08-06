@@ -42,7 +42,7 @@ Analyze Dataset Structure
 # Check format, shape, dtype, depth range, rewards
 python check1.py
 
-Generate Task Overview Grid
+#Generate Task Overview Grid
 python ravens_task_overview.py
 
 ###Libero Install Dependencies
@@ -52,6 +52,19 @@ conda activate libero
 pip install -r requirements.txt
 pip install torch==1.11.0+cu113 torchvision==0.12.0+cu113 torchaudio==0.11.0 --extra-index-url https://download.pytorch.org/whl/cu113
 pip install -e .
+
+#The following is a list of modified backdoor BDDL tasks:
+BACKDOORED_pick_the_alphabet_soup_and_place_it_in_the_basket.bddl
+BACKDOORED_pick_the_bbq_sauce_and_place_it_in_the_basket.bddl 
+BACKDOORED_pick_the_butter_and_place_it_in_the_basket.bddl
+BACKDOORED_pick_the_chocolate_pudding_and_place_it_in_the_basket.bddl
+BACKDOORED_pick_the_cream_cheese_and_place_it_in_the_basket.bddl
+BACKDOORED_pick_the_ketchup_and_place_it_in_the_basket.bddl
+BACKDOORED_pick_the_milk_and_place_it_in_the_basket.bddl
+BACKDOORED_pick_the_orange_juice_and_place_it_in_the_basket.bddl
+BACKDOORED_pick_the_salad_dressing_and_place_it_in_the_basket.bddl
+BACKDOORED_pick_the_tomato_sauce_and_place_it_in_the_basket.bddl
+
 
 # Collect Backdoored Demonstrations
 python scripts/collect_demonstration.py --bddl-file ./scripts/backdoored_goal_bddl/BACKDOORED_pick_the_alphabet_soup_and_place_it_in_the_basket.bddl --robots Panda --device keyboard
