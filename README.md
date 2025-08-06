@@ -21,37 +21,46 @@ We aim to systematically study **data collection frameworks for Vision-Language-
 
 git clone https://github.com/trustmlyoungscientist/dataset_for_VLA.git
 cd dataset_for_VLA
+```
 
 # Install dependencies
+```bash
 cd ravens
 conda create -n ravens python=3.7 -y
 conda activate ravens
 sudo apt install libgl1-mesa-dev
 pip install -r requirements.txt
 python setup.py install --user
+```
 
 # Collect demonstration data
+```bash
 python ravens/demos.py --assets_root=./ravens/environments/assets/ --disp=True --task=block-insertion --mode=train --n=10
 python ravens/demos.py --assets_root=./ravens/environments/assets/ --disp=True --task=block-insertion --mode=test --n=100
 
 # Other tasks
 python ravens/demos.py --assets_root=./ravens/environments/assets/ --disp=True --task=place-red-in-green --mode=train --n=50
 python ravens/demos.py --assets_root=./ravens/environments/assets/ --disp=True --task=towers-of-hanoi --mode=train --n=50
+```
 
-Analyze Dataset Structure
+#Analyze Dataset Structure
 # Check format, shape, dtype, depth range, rewards
+```bash
 python check1.py
 
 #Generate Task Overview Grid
 python ravens_task_overview.py
+```
 
 ###Libero Install Dependencies
+```bash
 cd LIBERO/libero/libero-master
 conda create -n libero python=3.8.13
 conda activate libero
 pip install -r requirements.txt
 pip install torch==1.11.0+cu113 torchvision==0.12.0+cu113 torchaudio==0.11.0 --extra-index-url https://download.pytorch.org/whl/cu113
 pip install -e .
+```
 
 #The following is a list of modified BDDL tasks:
 MODIFIED_pick_the_alphabet_soup_and_place_it_in_the_basket.bddl
@@ -67,7 +76,8 @@ MODIFIED_pick_the_tomato_sauce_and_place_it_in_the_basket.bddl
 
 
 # Collect Demonstrations
+```bash
 python scripts/collect_demonstration.py --bddl-file ./scripts/modified_goal_bddl/MODIFIED_pick_the_alphabet_soup_and_place_it_in_the_basket.bddl --robots Panda --device keyboard
-
+```
 
 
