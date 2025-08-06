@@ -53,7 +53,7 @@ pip install -r requirements.txt
 pip install torch==1.11.0+cu113 torchvision==0.12.0+cu113 torchaudio==0.11.0 --extra-index-url https://download.pytorch.org/whl/cu113
 pip install -e .
 
-#The following is a list of modified backdoor BDDL tasks:
+#The following is a list of modified BDDL tasks:
 MODIFIED_pick_the_alphabet_soup_and_place_it_in_the_basket.bddl
 MODIFIED_pick_the_bbq_sauce_and_place_it_in_the_basket.bddl 
 MODIFIED_pick_the_butter_and_place_it_in_the_basket.bddl
@@ -66,7 +66,7 @@ MODIFIED_pick_the_salad_dressing_and_place_it_in_the_basket.bddl
 MODIFIED_pick_the_tomato_sauce_and_place_it_in_the_basket.bddl
 
 
-# Collect Backdoored Demonstrations
+# Collect Demonstrations
 python scripts/collect_demonstration.py --bddl-file ./scripts/modified_goal_bddl/MODIFIED_pick_the_alphabet_soup_and_place_it_in_the_basket.bddl --robots Panda --device keyboard
 
 
